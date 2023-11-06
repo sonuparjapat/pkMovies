@@ -1,6 +1,6 @@
 <!-- Introduction Image -->
 <p align="center">
-  <img src="https://github.com/sonuparjapat/pkMovies/assets/115461488/e3886523-67f2-47d4-81b1-49a3d66b9dc2" alt="PK Movies Introduction" width="500" />
+  <img src="https://github.com/sonuparjapat/pkMovies/assets/115461488/e3886523-67f2-47d4-81b1-49a3d66b9dc2" alt="PK Movies Introduction: Discover a world of movies" width="500" />
 </p>
 
 # PK Movies 🎬
@@ -18,7 +18,7 @@ PK Movies is a web application that provides information about movies. Users can
 ## Movie List Image
 <!-- Add an image that shows the list of movies here -->
 <p align="center">
-  <img src="https://github.com/sonuparjapat/pkMovies/assets/115461488/75c59481-e265-4fe0-b050-00ee1157eb6f" alt="Movie List" width="500" />
+  <img src="https://github.com/sonuparjapat/pkMovies/assets/115461488/75c59481-e265-4fe0-b050-00ee1157eb6f" alt="Movie List: Browse a curated selection of movies" width="500" />
 </p>
 
 ## Getting Started 🚦
@@ -35,4 +35,4 @@ Before you begin, ensure you have met the following requirements:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/pk-movies.git
+   git clone https://github.com/sonuparjapat/pk-movies.git
