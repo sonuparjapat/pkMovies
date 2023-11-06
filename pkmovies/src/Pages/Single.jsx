@@ -3,15 +3,16 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { getsingle } from '../Redux/GetSingle/Action'
 import { Center, Heading,Box,Image,Text,Spinner,Badge } from '@chakra-ui/react'
+import { apikey } from '../Redux/ApiRelated/Api'
 
 export default function Single() {
     const dispatch=useDispatch()
     const {id}=useParams()
     const data=useSelector((state)=>state.getsinglereducer)
     const {isLoading,isError,single}=data
-    console.log(single)
+    // console.log(single)
     useEffect(()=>{
-        dispatch(getsingle({i:id,apiKey:"f10cad10"}))
+        dispatch(getsingle({i:id,"apiKey":apikey}))
     },[])
 
     if(isLoading){

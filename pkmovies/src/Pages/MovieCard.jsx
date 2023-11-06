@@ -14,6 +14,7 @@ import {
 import { Link, useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getmovies } from '../Redux/GetMoveis/Action';
+import { apikey } from '../Redux/ApiRelated/Api';
 function MovieSearch() {
 const [searchParams]=useSearchParams()
 //   const [searchParams] = useState(searchParams.get("query")||'Avatar'); // Default search query
@@ -23,10 +24,13 @@ const location=useLocation()
 const dispatch=useDispatch()
 const moviedata=useSelector((state)=>state.getmoviesreducer)
 const {isLoading,isError,data}=moviedata
+
+
+// handling get request for movies
   useEffect(() => {
     const params={
         s:searchParams.get("query")?searchParams.get("query"):"avatar",
-        apiKey:"f10cad10"
+        apiKey:apikey
     }
     dispatch(getmovies(params))
 
@@ -47,7 +51,7 @@ const navigate=useNavigate()
         templateColumns={["repeat(2,1fr)","repeat(3,1fr)","repeat(3,1fr)","repeat(3,1fr)","repeat(4,1fr)"]}
         gap={6}
       >
-        {data!=="undefined"&&data.length>=1&&data.map((movie) => (
+        {data&&data.length>=1&&data.map((movie) => (
          <Link to={`/details/${movie.imdbID}`}> <Box
             borderWidth="1px"
             borderRadius="lg"

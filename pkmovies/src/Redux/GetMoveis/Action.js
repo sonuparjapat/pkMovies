@@ -1,5 +1,6 @@
 import axios from "axios"
 import { getmoviefail, getmoviereq, getmoviesucc } from "./ActionTypes"
+import { apikey } from "../ApiRelated/Api"
 
 export const getmovierequest=()=>{
     return {type:getmoviereq}
@@ -16,15 +17,17 @@ export const getmovies=(obj)=>async(dispatch)=>{
 // obj.s=="undefined"&&(obj.s="avatar")
 dispatch(getmovierequest())
 
+
     try {
         const response = await axios.get(
-          `http://www.omdbapi.com`,{
+          `https://omdbbackend.onrender.com/getmovies/get`,{
             "params":obj
           }
         );
 // console.log(response.data.Search)
-        if (response.data.Search) {
-          dispatch(getmoviesuccess(response.data.Search))
+// console.log(response)
+        if (response.data.moviedata) {
+          dispatch(getmoviesuccess(response.data.moviedata))
          
         } 
       } catch (err) {

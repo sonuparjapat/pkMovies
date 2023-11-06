@@ -16,10 +16,11 @@ export const getsinglefailure=()=>{
 export const getsingle=(obj)=>async(dispatch)=>{
     dispatch(getsinglerequest())
 try{
-    const response=await axios.get("http://www.omdbapi.com/",{
+    const response=await axios.get("https://omdbbackend.onrender.com/getmovies/getsingle",{
         params:obj
     })
-    const moviedata=await response.data
+    // console.log(response)
+    const moviedata=await response.data.moviedata
     if(moviedata){
         dispatch(getsinglesuccess(moviedata))
     }
