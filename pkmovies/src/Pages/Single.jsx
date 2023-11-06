@@ -11,6 +11,8 @@ export default function Single() {
     const data=useSelector((state)=>state.getsinglereducer)
     const {isLoading,isError,single}=data
     // console.log(single)
+
+    // handling single data details 
     useEffect(()=>{
         dispatch(getsingle({i:id,"apiKey":apikey}))
     },[])

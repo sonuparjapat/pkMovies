@@ -9,9 +9,8 @@ function Navbar() {
   const [searchParams,setSearchParams]=useSearchParams()
   const [query,setQuery]=useState(searchParams.get("query")||"")
 const location=useLocation()
-  // useEffect(()=>{
-  
-  // },[])
+
+// handling searching system
 const handlesearch=()=>{
   const obj={
 

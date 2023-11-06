@@ -7,7 +7,7 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { getmovies } from '../Redux/GetMoveis/Action';
 import { useSearchParams } from 'react-router-dom';
 
-const AmazingCarousel = () => {
+export default function CommonCarousl(){
   const [moviedata,setData]=useState([])
   const dispatch=useDispatch()
   const [searhParams]=useSearchParams()
@@ -40,4 +40,3 @@ const AmazingCarousel = () => {
   
 };
 
-export default AmazingCarousel;
