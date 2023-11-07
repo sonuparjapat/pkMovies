@@ -1,8 +1,9 @@
 /* Movie Grid */
 .movie-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 20px;
+  grid-gap: 20px;
+  width: 90%;
+  margin: auto;
 }
 
 /* Movie Card */
@@ -25,6 +26,12 @@
   max-height: 250px;
 }
 
+/* Movie Title Link (remove underline) */
+.movie-card a {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* Movie Title */
 .movie-title {
   font-size: 1.2rem;
@@ -43,4 +50,23 @@
   text-align: center;
   color: white;
   font-size: 20px;
+}
+
+/* Media Queries */
+@media (min-width: 1024px) {
+  .movie-grid {
+    grid-template-columns: repeat(4, 1fr); /* Four cards for desktop */
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .movie-grid {
+    grid-template-columns: repeat(2, 1fr); /* Two cards for tablet */
+  }
+}
+
+@media (max-width: 767px) {
+  .movie-grid {
+    grid-template-columns: repeat(1, 1fr); /* One card for mobile */
+  }
 }

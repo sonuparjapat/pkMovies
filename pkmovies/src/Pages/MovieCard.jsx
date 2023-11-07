@@ -45,13 +45,13 @@ function MovieSearch() {
       {data &&
         data.length >= 1 &&
         data.map((movie) => (
-          <Link to={`/details/${movie.imdbID}`} key={movie.imdbID}>
-            <div className="movie-card">
-              <img className="movie-image" src={movie.Poster} alt={movie.Title} />
-              <div className="movie-title">{movie.Title}</div>
-              <div className="movie-year">{movie.Year}</div>
-            </div>
-          </Link>
+          <div className="movie-card">
+            <Link to={`/details/${movie.imdbID}`}>
+          <img className="movie-image" src={movie.Poster} alt={movie.Title} />
+          <div className="movie-title">{movie.Title}</div>
+          <div className="movie-year">{movie.Year}</div></Link>
+        </div>
+        
         ))}
       {data.length === 0 && (
         <div className="no-data">
