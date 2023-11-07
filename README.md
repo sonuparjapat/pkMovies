@@ -5,7 +5,7 @@
 
 # PK Movies 🎬
 
-PK Movies is a web application that provides information about movies. Users can search for movies, view movie details, and enjoy a responsive movie carousel. This project is built using React, Chakra UI, Redux, Express, and Node.js. 🚀
+PK Movies is a web application that provides information about movies. Users can search for movies, view movie details, and enjoy a responsive movie carousel. This project is built using React,Css, Redux, Express, and Node.js. 🚀
 deployed link:#https://enjoypk.netlify.app/
 
 ## Features 🌟
