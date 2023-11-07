@@ -1,0 +1,86 @@
+/* Navbar */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: sticky;
+    background-color: #3182CE;
+    padding: 1rem;
+  }
+  
+  /* Container */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Text */
+  .text {
+    font-size: 1.5rem;
+    color: white;
+    font-weight: bold;
+  }
+  
+  /* Input */
+  .input {
+    margin-left: 10px;
+    text-align: center;
+    font-size: 18px;
+    color: black;
+    width: 100%; /* Take up the available width */
+    max-width: 400px; /* Limit the input width on larger screens */
+    padding: 0.5rem;
+    background-color: white;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  /* Button */
+  .button {
+    margin-left: 10px;
+    color: white;
+    background-color: #319795;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+  }
+  .inputcontainer{
+    display: flex;
+    width: 700px;
+  }
+  /* Responsive Styles */
+  @media screen and (max-width: 768px) {
+
+    .inputcontainer{
+        display: flex;
+        width: 300px;
+      }
+    
+    .input {
+      width: 100%;
+      max-width: 100%;
+    }
+    
+    .text {
+      margin-bottom: 10px;
+    }
+    
+    .button {
+      margin-left: 10px;
+      /* margin-top: 10px; */
+    }
+  }
+  @media screen and (max-width:400px) {
+ 
+        .container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .inputcontainer{
+        display: flex;
+        width: 270px;
+      }
+  }
