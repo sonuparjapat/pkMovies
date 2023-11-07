@@ -1,0 +1,59 @@
+/* Single Container */
+.single-container {
+    padding: 1rem;
+  }
+  
+  /* Single Image */
+  .single-image {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    max-height: 400px; /* Adjust the maximum height as needed */
+  }
+  
+  /* Single Title */
+  .single-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 1rem;
+  }
+  
+  /* Single Year */
+  .single-year {
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 1rem 0;
+  }
+  
+  /* Genre Badge */
+  .genre-badge {
+    display: inline-block;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #319795;
+    background-color: transparent;
+    color: #319795;
+    border-radius: 4px;
+    text-align: center;
+    margin-top: 1rem;
+  }
+  
+  /* Single Plot */
+  .single-plot {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    text-align: center;
+  }
+  
+  /* Loading and Error Messages */
+  .loading-message,
+  .error-message {
+    text-align: center;
+    margin-top: 2rem;
+    height: 600px;
+  }
+
+  .isloadinghandle{
+    height: 600px;
+  }
+  

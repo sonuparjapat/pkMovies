@@ -1,76 +1,65 @@
-// src/components/MovieSearch.js
-
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import {
-  Box,
-  Image,
-  Text,
-  Grid,
-  Spinner,
-  Center,
-  Heading,
-} from '@chakra-ui/react';
 import { Link, useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getmovies } from '../Redux/GetMoveis/Action';
 import { apikey } from '../Redux/ApiRelated/Api';
+import './MovieSearch.css'; // Import the CSS file
+
 function MovieSearch() {
-const [searchParams]=useSearchParams()
-//   const [searchParams] = useState(searchParams.get("query")||'Avatar'); // Default search query
+  const [searchParams] = useSearchParams();
   const [movies, setMovies] = useState([]);
   const [error, setError] = useState(null);
-const location=useLocation()
-const dispatch=useDispatch()
-const moviedata=useSelector((state)=>state.getmoviesreducer)
-const {isLoading,isError,data}=moviedata
+  const location = useLocation();
+  const dispatch = useDispatch();
+  const moviedata = useSelector((state) => state.getmoviesreducer);
+  const { isLoading, isError, data } = moviedata;
 
-
-// handling get request for movies
+  // handling get request for movies
   useEffect(() => {
-    const params={
-        s:searchParams.get("query")?searchParams.get("query"):"avatar",
-        apiKey:apikey
-    }
-    dispatch(getmovies(params))
-
+    const params = {
+      s: searchParams.get('query') ? searchParams.get('query') : 'avatar',
+      apiKey: apikey,
+    };
+    dispatch(getmovies(params));
   }, [location.search]);
-  // console.log(data)
-const navigate=useNavigate()
-  if(isLoading){
-    return <Center height="100vh" ><Heading>Loading...</Heading></Center>
-  }else if(isError){
-    return <Center height={"100vh"}> <Heading>Something going wrong..</Heading></Center>
+
+  const navigate = useNavigate();
+
+  if (isLoading) {
+    return (
+      <div className="loading-message">
+        <p>Loading...</p>
+      </div>
+    );
+  } else if (isError) {
+    return (
+      <div className="error-message">
+        <p>Something went wrong...</p>
+      </div>
+    );
   }
+
   return (
-    <Box    mt="10">
-     
-
-      <Grid
-   
-        templateColumns={["repeat(2,1fr)","repeat(3,1fr)","repeat(3,1fr)","repeat(3,1fr)","repeat(4,1fr)"]}
-        gap={6}
-      >
-        {data&&data.length>=1&&data.map((movie) => (
-         <Link to={`/details/${movie.imdbID}`}> <Box
-            borderWidth="1px"
-            borderRadius="lg"
-            overflow="hidden"
-            boxShadow="md"
-            key={movie.imdbID}
-          >
-            <Image src={movie.Poster} w="100%" alt={movie.Title} />
-            <Text fontSize="xl" fontWeight="semibold">
-              {movie.Title}
-            </Text>
-            <Text fontSize="md">{movie.Year}</Text>
-          </Box></Link>
+    <div className="movie-grid">
+      {data &&
+        data.length >= 1 &&
+        data.map((movie) => (
+          <Link to={`/details/${movie.imdbID}`} key={movie.imdbID}>
+            <div className="movie-card">
+              <img className="movie-image" src={movie.Poster} alt={movie.Title} />
+              <div className="movie-title">{movie.Title}</div>
+              <div className="movie-year">{movie.Year}</div>
+            </div>
+          </Link>
         ))}
-      </Grid>
-      {data.length==0&&<Box ><Heading textAlign={"center"} color={"white"} fontSize={"20px"}>No Data Found!!</Heading></Box>}
-
+      {data.length === 0 && (
+        <div className="no-data">
+          <p>No Data Found!!</p>
+        </div>
+      )}
       {error && <p>{error}</p>}
-    </Box>
+    </div>
   );
 }
 
