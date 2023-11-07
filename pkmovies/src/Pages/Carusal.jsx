@@ -25,13 +25,19 @@ export default function CommonCarousl(){
         interval={3000} // Change slides every 3 seconds
       >
       <div>
-          <img src="https://images2.alphacoders.com/724/thumbbig-724132.webp" alt="image1"/>
+          <img src="https://wallpapercave.com/wp/wp5556202.jpg" alt="image1"/>
         </div>
         <div>
-          <img src="https://images2.alphacoders.com/589/thumbbig-589553.webp" alt="Image 2" />
+          <img src="https://cdn.wallpapersafari.com/66/53/IiFMyZ.jpg" alt="Image 2" />
         </div>
         <div>
-          <img src="https://images8.alphacoders.com/133/thumbbig-1337270.webp" alt="Image 3" />
+          <img src="https://i.pinimg.com/736x/ab/34/7e/ab347e0b98a800e0ceef236610801122.jpg" alt="Image3"/>
+        </div>
+        <div>
+          <img src="https://www.wallpapers13.com/wp-content/uploads/2017/03/Marvel-Captain-America-Chris-Evans-The-Avengers-Age-of-Ultron-Movie-Wallpaper-HD-For-Desktop-1920x1080-840x525.jpg" alt="Image3"/>
+        </div>
+        <div>
+          <img src="https://images.hdqwalls.com/download/captain-marvel-2019-10k-ym-2560x1440.jpg" alt="Image 4" />
         </div>
    
       </Carousel>
